@@ -4,9 +4,10 @@
 # Seccion 70
 # 
 # Erick Marroquin - 123456
-# Solicion del ejercicio individual 1
+# Solicion del ejercicio individual 1 - Pitagoras
 # 30/01/24
 #==========================================================
+
 import math
 
 a = input("Ingrese el valor del cateto A: ")

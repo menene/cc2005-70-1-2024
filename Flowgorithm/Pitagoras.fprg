@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="erickmarroquin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-31 08:50:43 AM"/>
+        <attribute name="created" value="ZXJpY2ttYXJyb3F1aW47RVJJQ0tTLU0yLVBSTzsyMDI0LTAxLTMxOzA1OjQ4OjA0IEFNOzM2ODY="/>
+        <attribute name="edited" value="ZXJpY2ttYXJyb3F1aW47RVJJQ0tTLU0yLVBSTzsyMDI0LTAxLTMxOzA4OjUwOjQzIEFNOzE7Mzc5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b, c" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <assign variable="c" expression="sqrt(a*a+b*b)"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
