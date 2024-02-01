@@ -4,18 +4,38 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="erickmarroquin"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-01-31 08:50:43 AM"/>
+        <attribute name="saved" value="2024-02-01 11:52:49 AM"/>
         <attribute name="created" value="ZXJpY2ttYXJyb3F1aW47RVJJQ0tTLU0yLVBSTzsyMDI0LTAxLTMxOzA1OjQ4OjA0IEFNOzM2ODY="/>
-        <attribute name="edited" value="ZXJpY2ttYXJyb3F1aW47RVJJQ0tTLU0yLVBSTzsyMDI0LTAxLTMxOzA4OjUwOjQzIEFNOzE7Mzc5Mw=="/>
+        <attribute name="edited" value="ZXJpY2ttYXJyb3F1aW47RVJJQ0tTLU0yLVBSTzsyMDI0LTAyLTAxOzExOjUyOjQ5IEFNOzM7Mzc5NQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="a, b, c" type="Integer" array="False" size=""/>
-            <input variable="a"/>
-            <input variable="b"/>
-            <assign variable="c" expression="sqrt(a*a+b*b)"/>
-            <output expression="c" newline="True"/>
+            <declare name="a, b, c, modo" type="Integer" array="False" size=""/>
+            <output expression="&quot;&#191;Conoces la hipotenusa? ingresa 1 para si &#243; cualquier otro valor para no&quot;" newline="True"/>
+            <input variable="modo"/>
+            <if expression="modo==1">
+                <then>
+                    <output expression="&quot;Ingrese el valor del cateto A&quot;" newline="True"/>
+                    <input variable="a"/>
+                    <output expression="&quot;Ingrese el valor del cateto B&quot;" newline="True"/>
+                    <input variable="b"/>
+                    <assign variable="c" expression="sqrt(a*a+b*b)"/>
+                    <output expression="&quot;La hipotenusa es: &quot;" newline="True"/>
+                    <output expression="c" newline="True"/>
+                    <comment text="Hipotenusa conocida"/>
+                </then>
+                <else>
+                    <output expression="&quot;Ingresa el valor de la hipotenusa&quot;" newline="True"/>
+                    <input variable="c"/>
+                    <output expression="&quot;Ingresa el valor del cateto B&quot;" newline="True"/>
+                    <input variable="b"/>
+                    <assign variable="a" expression="sqrt(c*c-b*b)"/>
+                    <output expression="&quot;El cateto valor del cateto A es:&quot;" newline="True"/>
+                    <output expression="a" newline="True"/>
+                    <comment text="Hipotenusa desconocida"/>
+                </else>
+            </if>
         </body>
     </function>
 </flowgorithm>

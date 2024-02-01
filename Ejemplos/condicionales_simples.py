@@ -8,8 +8,8 @@
 # 30/01/24
 #==========================================================
 
-dia = 3
-hora = 8.2
+dia = 4
+hora = 7.1
 
 clase_progra = (dia == 2 or dia == 4) and (hora >= 7 and hora <= 8.5)
 
@@ -18,3 +18,9 @@ if clase_progra:
     print("Voy a clase")
 else:
     print("Me salve")
+
+if not clase_progra:
+    print("Me salve")
+else:
+    print("Voy a clase")
+    

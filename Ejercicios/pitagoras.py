@@ -10,13 +10,24 @@
 
 import math
 
-a = input("Ingrese el valor del cateto A: ")
-print(type(a))
-a = int(a)
-print(type(a))
+modo = input("¿Conoces la hipotenusa? (si o no)")
 
-b = int(input("Ingrese el valor del cateto B: "))
+if modo == "si":
+    c = input("Ingrese el valor de la hipotenusa: ")
+    c = int(c)
 
-c = math.sqrt((a * a) + (b * b))
+    b = int(input("Ingrese el valor del cateto B: "))
 
-print("El valor de c es:", c)
+    a = math.sqrt((c * c) - (b * b))
+
+    print("El valor del cateto A es:", a)
+else:
+    a = input("Ingrese el valor del cateto A: ")
+    a = int(a)
+
+    b = int(input("Ingrese el valor del cateto B: "))
+
+    c = math.sqrt((a * a) + (b * b))
+
+    print("El valor de c es:", c)
+
