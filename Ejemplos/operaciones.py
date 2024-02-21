@@ -1,3 +1,5 @@
+import math
+
 def suma(num1, num2):
     r = num1 + num2
     return r
@@ -17,3 +19,8 @@ def entre(num1, num2):
 def expo(num1, num2):
     r = num1 ** num2
     return r
+
+def pitagoras(a, b):
+    c = math.sqrt(a**2 + b**2)
+
+    return c
