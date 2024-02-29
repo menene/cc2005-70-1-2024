@@ -36,6 +36,7 @@ dibujar.poligono(cr7, 3, 100)
 dibujar.poligono(cr7, 4, 100)
 dibujar.poligono(cr7, 6, 100)
 dibujar.poligono(cr7, 8, 100)
+
 perimetro = calculos.perimetro_octagono(lado)
 area = calculos.area_octagono(lado)
 
