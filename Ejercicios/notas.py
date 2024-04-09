@@ -1,11 +1,11 @@
 # ==========================================
 # Universidad del valle de Guatemala
-# CC2005 - Algoritmos y Programacion Basica
-# 60
+# cc2005 - Algoritmos y Programacion Basica
+# sección 60
 #
 # Erick Marroquín
 #
-# 04/04/24
+# 04/04/24 ultima modificación
 #
 # Programa para control de notas
 # ==========================================
@@ -21,46 +21,127 @@ def promedio(notas):
 estudiantes = []
 
 opcion = ""
-while opcion != "salir":
+while opcion != "6":
     print("\n=== CONTROL DE NOTAS ===\n")
     print("1. Nuevo estudiante")
     print("2. Agregar nota")
     print("3. Promedio estudiante")
     print("4. Promedio general")
-    print("Salir para terminar")
+    print("5. Mostrar estudiantes")
+    print("6. Salir")
     print("")
 
     opcion = input("Seleccione una de las opciones: ")
-    opcion = opcion.lower()
+    # opcion = opcion.lower()
 
     if opcion == "1":
+        # pedirle al usuario los datos del estudiante
         carnet = input("Ingrese el número de carnet: ")
         nombre = input("Ingrese el nombre: ")
         notas = []
 
-        estudiante = {"carnet": carnet, "nombre": nombre, "notas": notas}
+        # crear diccionario con datos del estudiante
+        # estudiante = {"carnet": carnet, "nombre": nombre, "notas": notas}
+        estudiante = {
+            "carnet": carnet, 
+            "nombre": nombre, 
+            "notas": notas,
+            "promedio": 0
+        }
+
+        # agregar al estudiente a la lista de etudiantes
         estudiantes.append(estudiante)
 
     elif opcion == "2":
+        # solicitar el numero de carnet del estudiante
+        # al que se le quieren agregar las notas
         carnet = input("Ingrese el número de carnet: ")
 
+        # recorrer el listado de estudiantes
         for estudiante in estudiantes:
+            # ubicar al estudiante al que se le 
+            # quieren agregar las notas usando 
+            # el número de carnet
             if estudiante["carnet"] == carnet:
+                # si el estudiante es ubicado, se le pide
+                # la nota al usuario
                 nota = int(input("Ingrese la nota a agregar: "))
-                estudiante["notas"].append(nota)
-        
-    elif opcion == "3":
-        carnet = input("Ingrese el número de carnet: ")
 
-        for estudiante in estudiantes:
-            if estudiante["carnet"] == carnet:
+                # se ingresa la nota al listado de notas
+                # de ese estudiante
+                estudiante["notas"].append(nota)
+
+                # calcular el promedio usando
+                # la funcion 'promdio'
                 x = promedio(estudiante["notas"])
 
+                # guarda en el diccionario del usuario
+                # su promedio calculado
+                estudiante["promedio"] = x
+        
+    elif opcion == "3":
+        # pedir al usuario el numero de carnet
+        # de el estudiante a imprimir el promedio
+        carnet = input("Ingrese el número de carnet: ")
+        
+        # ubicar al estudiante al que se le 
+        # desea imprimir el priomedio usando 
+        # el número de carnet
+        for estudiante in estudiantes:
+            # si el estudiante es ubicado, se manda
+            # su lista de notas a la función que 
+            # calcula los promedios
+            if estudiante["carnet"] == carnet:
+                print("El promedio del estudiante es:", estudiante["promedio"])
+
+        """
+        # pedir al usuario el numero de carnet
+        # de el estudiante a imprimir el promedio
+        carnet = input("Ingrese el número de carnet: ")
+        
+        # ubicar al estudiante al que se le 
+        # desea imprimir el priomedio usando 
+        # el número de carnet
+        for estudiante in estudiantes:
+            # si el estudiante es ubicado, se manda
+            # su lista de notas a la función que 
+            # calcula los promedios
+            if estudiante["carnet"] == carnet:
+                # calcular el promedio usando
+                # la funcion 'promdio'
+                x = promedio(estudiante["notas"])
+
+                # guarda en el diccionario del usuario
+                # su promedio calculado
+                estudiante["promedio"] = x
+
+                # imprimimos en pantalla el promedio
                 print("El promedio del estudiante", estudiante["nombre"], "es de:", x)
+        """
 
     elif opcion == "4":
-        print("promedio general")
-    elif opcion == "salir":
-        print("Adios")
+        # lista vacia para almacenar
+        # los promedios de los estudiantes
+        lista_promedios = []
+
+        # recorremos la lista de estudiantes
+        # y guardamos el valor del promedio
+        # en la lista de promedios
+        for est in estudiantes:
+            lista_promedios.append(est["promedio"])
+
+        # calculamos el promedio de la lista de promedios
+        x = promedio(lista_promedios)
+        
+        print("Promedio General:", x)
+
+    elif opcion == "5":
+        print("Listado actual de etudiantes:")
+        for e in estudiantes:
+            print(e)
+    
+    elif opcion == "6":
+        print("Adios... esperamos que vuelvas pronto")
+
     else:
         print("Opción inválida... intentalo nuevamente")
