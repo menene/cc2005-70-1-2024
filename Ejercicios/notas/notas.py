@@ -149,3 +149,16 @@ while opcion != "6":
 
     else:
         print("Opción inválida... intentalo nuevamente")
+
+if filename != "":
+    with open(filename, mode='w') as archivo_csv:
+        columnas = ["Carnet", "Nombre"]
+        escritor = csv.DictWriter(archivo_csv, fieldnames=columnas)
+
+        escritor.writeheader()
+        
+        for estudiante in estudiantes:
+            escritor.writerow({
+                "Carnet": estudiante["carnet"],
+                "Nombre": estudiante["nombre"]
+            })
